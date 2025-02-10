@@ -1,0 +1,69 @@
+.py-base{
+    padding-block: var(--py-base);
+}
+
+.py-lg{
+    padding-block: var(--py-lg);
+}
+
+.py-xl{
+    padding-block: var(--py-xl);
+}
+
+.px-lg{
+    padding-inline: var(--px-lg);
+}
+
+.container{
+    --max-width: 375px;
+    
+    width: min(var(--max-width), 100% - var(--px-lg) * 2 );
+    /* o code acima pega o menor valor entre os 375px e a diferença aplicada com o padding de 1.2rem na var px-lg. ta multiplicado por dois, pq é referente aos lados esquerdo e direto; */
+
+    margin-inline: auto;
+    /* border: solid violet 2px; */
+}
+
+.desktop-only{
+    display: none;
+}
+
+.even-columns{
+    display: grid;
+    gap: 1rem;
+}
+
+.flex{
+    display: flex;
+}
+
+.items-center{
+    align-items: center;
+}
+
+.grid{
+    display: grid;
+}
+
+.gap-1{
+    gap: 1rem;
+}
+
+.gap-1\.5{
+    gap: 1.5rem;
+}
+
+@media (width >= 80em){
+    .container{
+        --max-width: 80rem;
+    }
+
+    .desktop-only{
+        display: initial; /* initial pega o display default da tag */
+    }
+
+    .even-columns{
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
+}

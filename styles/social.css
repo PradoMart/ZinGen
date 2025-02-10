@@ -1,0 +1,45 @@
+a.social{
+    --bg-img: "";
+    background-image: var(--bg-img);
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+
+    /* retirando o plano de fundo preto que colocamos na tag "a", no arquivo global. */
+    -webkit-background-clip: initial;
+    background-clip: initial;
+
+    &[aria-label="tiktok"] {
+        --bg-img: url(../assets/icons/social_medias/tiktok.svg);
+
+        &:hover{
+        --bg-img: url(../assets/icons/social_medias/tiktok-hover.svg);
+        }
+    }
+
+    &[aria-label="instagram"] {
+        --bg-img: url(../assets/icons/social_medias/instagram.svg);
+
+        &:hover{
+        --bg-img: url(../assets/icons/social_medias/instagram-hover.svg);
+        }
+    }
+
+    &[aria-label="twitter"] {
+        --bg-img: url(../assets/icons/social_medias/twitter.svg);
+
+        &:hover{
+        --bg-img: url(../assets/icons/social_medias/twitter-hover.svg);
+        }
+    }
+
+    &[aria-label="discord"] {
+        --bg-img: url(../assets/icons/social_medias/discord.svg);
+
+        &:hover{
+        --bg-img: url(../assets/icons/social_medias/discord-hover.svg);
+        }
+    }
+
+    
+}

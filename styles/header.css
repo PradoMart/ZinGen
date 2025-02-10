@@ -1,0 +1,6 @@
+header{
+    & a:first-child{
+        /* espaçamento entre a logo e os conteúdos do header */
+        margin-right: auto;
+    }
+}

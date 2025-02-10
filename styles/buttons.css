@@ -1,0 +1,90 @@
+.btn{
+    --btn-bg-color: var(--text-color-primary);
+    --btn-color: var(--bg-color);
+    border: 0;
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content; /* encaixar conforme conteudo */
+
+    border-radius: .5rem;
+    
+    font: var(--fw-md)  var(--fs-base)/1.5rem var(--ff-sans);
+    cursor: pointer;
+
+    background: var(--btn-bg-color);
+    color: var(--btn-color);
+}
+
+.btn:hover{
+    --btn-bg-color: linear-gradient(
+        90deg,
+        var(--brand-color-secundary) 0%,
+        var(--brand-color-primary) 100%
+    );
+
+    --btn-color: var(--surface-color);
+    
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--btn-color);
+}
+
+.btn-sm{
+    padding: .5rem 1rem;
+    font-size: var(--fs-sm);
+}
+
+.btn-md{
+    padding: .75rem 1.5rem;
+    font-size: var(--fs-base);
+}
+
+.btn-lg{
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+
+.btn[aria-label]{
+    position: relative;
+
+    &::before{
+        /* o before é necessário pra criar o fundo preto. */
+        
+        content: "";
+        position: absolute;
+        border-radius: inherit;
+        background-color: var(--bg-color);
+        
+        /* é como se fosse um padding de 1,5px */
+        inset: 1px;
+    }
+
+    &::after{
+        /* o codigo abaixo referencia o area-label no html e faz mostrar dentro do botão com a função attr, atrelado ao &::after. */
+        content: attr(aria-label);
+        background: var(--btn-bg-color);
+        
+        /* recorta o texto dentro da área, deixando tipo vazado */
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media (width >= 80em){
+   
+    .btn-sm{
+        padding: .75rem 1.5rem;
+        font-size: var(--fs-base);
+    }
+    
+    .btn-md{
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+    }
+}
